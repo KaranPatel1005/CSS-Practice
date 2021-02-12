@@ -52,14 +52,14 @@ section h2{
     }
     50%{
         opacity: 1;
-        background: url(../Images/bg.jpg);
+        background: url(../images/bg.jpg);
         background-position: center;
         background-attachment: fixed;
     }
     100%{
         opacity: 1;
         transform: scale(1) translateY(0px);
-        background: url(../Images/bg.jpg);
+        background: url(../images/bg.jpg);
         background-position: center;
         background-attachment: fixed;
     }
