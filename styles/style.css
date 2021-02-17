@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header .logo span {
+    color: #ff0157;
+}
+
+header .navigation {
+    position: relative;
+    display: flex;
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navigation li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s;
+}
+
+header .navigation li a:hover {
+    color: #ff0157;
+}
+
+header.sticky {
+    padding: 0 30px;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+header.sticky .logo {
+    color: #111;
+}
+
+header.sticky .navigation li a {
+    color: #111;
+}
+
+header.sticky .navigation li a:hover {
+    color: #ff0157;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/bg-img.jpg);
+    background-size: cover;
+}
+
+.banner .content {
+    max-width: 900px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.banner .content h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.banner .content p {
+    color: #fff;
+}
+
+.banner .content a {
+    text-decoration: none;
+    background-color: #ff0157;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 1.5em;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.banner .content a:hover {
+    letter-spacing: 5px;
+}
