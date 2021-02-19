@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img data-src="menu1.jpg" >
+    <script type="text/javascript">
+        var $img = document.querySelector("img[data-src]");
+        var URL = window.URL || window.webkitURL;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (this.status === 206) {
+                $img.src_part = this.response;
+                $img.src = URL.createObjectURL(this.response);
+            }
+        }
+
+        xhr.open('GET', $img.getAttribute('data-src'));
+        xhr.setRequestHeader("Range", "bytes=0-" + $img.getAttribute('data-bytes'));
+        xhr.responseType = 'blob';
+        xhr.send();
+
+
+        var $img = document.querySelector("img[data-src]");
+
+        var binary = atob($img.src.slice(23));
+        var n = binary.length;
+        var view = new Uint8Array(n);
+        while(n--) { view[n] = binary.charCodeAt(n); }
+
+        $img.src_part = new Blob([view], { type: 'image/jpeg' });
+        $img.setAttribute('data-bytes', $img.src_part.size - 1);
+
+    //     setTimeout(function(){
+    // var xhr = new XMLHttpRequest();
+    // xhr.onload = function(){
+    //     if (this.status === 206){
+    //         var blob = new Blob([$img.src_part, this.response], { type: 'image/jpeg'} );
+    //         $img.src = URL.createObjectURL(blob);
+    //     }
+    // }
+    // xhr.open('GET', $img.getAttribute('data-src'));
+    // xhr.setRequestHeader("Range", "bytes="+ (parseInt($img.getAttribute('data-bytes'), 10)+1) +'-');
+    // xhr.responseType = 'blob';
+    // xhr.send();
+//} 2000);
+    </script>
+</body>
+
+</html>
