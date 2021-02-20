@@ -31,23 +31,13 @@ header .logo span {
     color: #ff0157;
 }
 
-header .navigation {
-    position: relative;
-    display: flex;
-}
-
-header .navigation li {
-    list-style: none;
-    margin-left: 30px;
-}
-
-header .navigation li a {
+header .navigation ul li a {
     text-decoration: none;
     color: #fff;
     transition: 0.5s;
 }
 
-header .navigation li a:hover {
+header .navigation ul li a:hover {
     color: #ff0157;
 }
 
@@ -61,11 +51,11 @@ header.sticky .logo {
     color: #111;
 }
 
-header.sticky .navigation li a {
+header.sticky .navigation ul li a {
     color: #111;
 }
 
-header.sticky .navigation li a:hover {
+header.sticky .navigation ul li a:hover {
     color: #ff0157;
 }
 
@@ -115,13 +105,7 @@ header.sticky .navigation li a:hover {
 }
 
 section {
-    padding: 20px;
-}
-
-@media (min-width:991px) {
-    section {
-        padding: 100px;
-    }
+    padding: 100px;
 }
 
 .row {
@@ -441,4 +425,161 @@ footer .socialLinks li a i {
 
 footer .socialLinks li a:hover i {
     color: #ff0157;
+}
+
+@media (min-width:991px) {
+    header .hamburger {
+        display: none;
+    }
+    header .navigation ul {
+        position: relative;
+        display: flex;
+    }
+    header .navigation ul li {
+        list-style: none;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width:991px) {
+    section {
+        padding: 20px;
+    }
+    header .hamburger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header .hamburger .lines {
+        width: 30px;
+        background-color: #fff;
+        height: 3px;
+        transition: all 0.3s ease-out;
+    }
+    header.sticky .hamburger .lines {
+        background-color: #000;
+    }
+    header .hamburger .line1 {
+        transform: translatey(-3px);
+    }
+    header .hamburger .line3 {
+        transform: translatey(3px);
+    }
+    header .hamburger.clicked .lines {
+        background-color: #fff;
+    }
+    header.sticky .hamburger.clicked .lines {
+        background-color: #fff;
+    }
+    header .hamburger.clicked .line1 {
+        transform: translatey(3px) rotate(-135deg);
+    }
+    header .hamburger.clicked .line2 {
+        opacity: 0;
+    }
+    header .hamburger.clicked .line3 {
+        transform: translatey(-3px) rotate(135deg);
+    }
+    header .hamburger~.anim:before {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 1);
+        transition: all 500ms ease-in-out;
+        clip-path: circle(30px at calc(100% - 65px) 40px);
+        visibility: hidden;
+    }
+    header .hamburger.clicked~.anim:before {
+        visibility: visible;
+        clip-path: circle(100%);
+    }
+    header .navigation {
+        display: none;
+    }
+    header .navigation ul {
+        opacity: 0;
+        transition: 5s;
+    }
+    header .navigation.open {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: 5s;
+    }
+    header .navigation.open ul {
+        list-style: none;
+        z-index: 2;
+        opacity: 1;
+        transition: 5s;
+        text-align: center;
+    }
+    header .navigation.open ul li {
+        margin-bottom: 10px;
+    }
+    header.sticky .navigation.open ul li a {
+        transition: 1s;
+        color: #fff;
+    }
+    .banner .content h2{
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    .about .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .row .col50 {
+        width: 100%;
+    }
+    .about .row .col50 h2 {
+        text-align: center;
+    }
+    .about .text {
+        margin-top: 10px;
+    }
+    .about .text:last-child {
+        margin-bottom: 30px;
+    }
+    .row .col50 .bgImg {
+        height: 300px;
+    }
+    .menu .content, .expert .content, .testimonials .content {
+        margin-top: 20px;
+    }
+    .menu .content .box, .expert .content .box,.testimonials .content .box {
+        margin: 10px;
+    }
+    .expert .content .box{
+        width: 340px;
+    }
+    .testimonials .content .box{
+        padding: 20px;
+    }
+    .contactForm{
+        margin-top: 20px;
+    }
+    footer{
+        flex-direction: column;
+    }
+footer p{
+    text-align: center;
+}
+    footer .socialLinks
+    {
+        margin-top: 10px;;
+    }
 }

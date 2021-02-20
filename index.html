@@ -12,14 +12,22 @@
 <body>
     <header>
         <a href="#" class="logo">Food<span>.</span></a>
-        <ul class="navigation">
-            <li><a href="#banner">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#expert">Expert</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="hamburger">
+            <div class="lines line1"></div>
+            <div class="lines line2"></div>
+            <div class="lines line3"></div>
+        </div>
+        <div class="anim"></div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#expert">Expert</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <section class="banner" id="banner">
         <div class="content">
@@ -265,6 +273,13 @@
         header.classList.toggle("sticky", window.scrollY > 0);
     })
 
+    const hamburger = document.querySelector(".hamburger");
+    const navigation = document.querySelector(".navigation");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle('clicked');
+        navigation.classList.toggle('open');
+    });
 </script>
 
 </html>
