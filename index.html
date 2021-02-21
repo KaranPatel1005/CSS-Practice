@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
     <header>
         <a href="#" class="logo">Food<span>.</span></a>
@@ -279,7 +278,17 @@
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle('clicked');
         navigation.classList.toggle('open');
+
+const a = document.querySelectorAll('.navigation.open ul li a');
+    console.log(a);
+    for(const aa of a){
+aa.addEventListener("click", () => {
+        hamburger.classList.toggle('clicked');
+        navigation.classList.toggle('open');
+    });}
     });
+
+    
 </script>
 
 </html>
