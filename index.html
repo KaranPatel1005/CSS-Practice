@@ -263,27 +263,27 @@
     </footer>
 </body>
 <script type="text/javascript">
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    header.classList.toggle("sticky", window.scrollY > 0);
-})
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
 
-const hamburger = document.querySelector(".hamburger");
-const navigation = document.querySelector(".navigation");
+    const hamburger = document.querySelector(".hamburger");
+    const navigation = document.querySelector(".navigation");
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle('clicked');
-    navigation.classList.toggle('open');
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle('clicked');
+        navigation.classList.toggle('open');
 
-    const a = document.querySelectorAll('.navigation.open ul li a');
-    console.log(a);
-    for (const aa of a) {
-        aa.addEventListener("click", () => {
-            hamburger.classList.remove('clicked');
-            navigation.classList.remove('open');
-        });
-    }
-});
+        const a = document.querySelectorAll('.navigation.open ul li a');
+        console.log(a);
+        for (const aa of a) {
+            aa.addEventListener("click", () => {
+                hamburger.classList.remove('clicked');
+                navigation.classList.remove('open');
+            });
+        }
+    });
 </script>
 
 </html>
