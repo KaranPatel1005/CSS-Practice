@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -252,7 +253,8 @@ section {
     background-size: cover;
 }
 
-.white .titleText, .white p {
+.white .titleText,
+.white p {
     color: #fff;
 }
 
@@ -348,7 +350,8 @@ section {
     margin-bottom: 20px;
 }
 
-.contactForm .inputBox input, .contactForm .inputBox textarea {
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
     width: 100%;
     border: 1px solid #555;
     padding: 10px;
@@ -431,10 +434,12 @@ footer .socialLinks li a:hover i {
     header .hamburger {
         display: none;
     }
+
     header .navigation ul {
         position: relative;
         display: flex;
     }
+
     header .navigation ul li {
         list-style: none;
         margin-left: 30px;
@@ -445,6 +450,7 @@ footer .socialLinks li a:hover i {
     section {
         padding: 20px;
     }
+
     header .hamburger {
         position: absolute;
         right: 5%;
@@ -454,60 +460,73 @@ footer .socialLinks li a:hover i {
         flex-direction: column;
         justify-content: center;
     }
+
     header .hamburger .lines {
         width: 30px;
         background-color: #fff;
         height: 3px;
         transition: all 0.3s ease-out;
     }
+
     header.sticky .hamburger .lines {
         background-color: #000;
     }
+
     header .hamburger .line1 {
         transform: translatey(-3px);
     }
+
     header .hamburger .line3 {
         transform: translatey(3px);
     }
+
     header .hamburger.clicked .lines {
         background-color: #fff;
     }
+
     header.sticky .hamburger.clicked .lines {
         background-color: #fff;
     }
+
     header .hamburger.clicked .line1 {
         transform: translatey(3px) rotate(-135deg);
     }
+
     header .hamburger.clicked .line2 {
         opacity: 0;
     }
+
     header .hamburger.clicked .line3 {
         transform: translatey(-3px) rotate(135deg);
     }
-    header .hamburger~.anim:before {
+
+    header .hamburger~.anim {
         display: block;
         position: fixed;
         top: 0;
         left: 0;
-        content: '';
         width: 100vw;
         height: 100vh;
         background: rgba(0, 0, 0, 1);
-        transition: all 500ms ease-in-out;
+        transition: all 0.5s;
         clip-path: circle(30px at calc(100% - 65px) 40px);
         visibility: hidden;
     }
-    header .hamburger.clicked~.anim:before {
+
+    header .hamburger.clicked~.anim {
         visibility: visible;
         clip-path: circle(100%);
     }
+
     header .navigation {
         display: none;
     }
+
     header .navigation ul {
         opacity: 0;
         transition: 5s;
     }
+
     header .navigation.open {
         width: 100%;
         height: 100%;
@@ -520,6 +539,7 @@ footer .socialLinks li a:hover i {
         flex-direction: column;
         transition: 5s;
     }
+
     header .navigation.open ul {
         list-style: none;
         z-index: 2;
@@ -527,59 +547,85 @@ footer .socialLinks li a:hover i {
         transition: 5s;
         text-align: center;
     }
+
     header .navigation.open ul li {
         margin-bottom: 10px;
     }
+
     header.sticky .navigation.open ul li a {
         transition: 1s;
         color: #fff;
     }
-    .banner .content h2{
+
+    .banner .content h2 {
         font-size: 2em;
         margin-bottom: 10px;
     }
+
+    .about .titleText,
+    .title {
+        margin-top: 40px;
+    }
+
     .about .row {
         flex-direction: column;
         align-items: center;
     }
+
     .about .row .col50 {
         width: 100%;
     }
+
     .about .row .col50 h2 {
         text-align: center;
     }
+
     .about .text {
         margin-top: 10px;
     }
+
     .about .text:last-child {
         margin-bottom: 30px;
     }
+
     .row .col50 .bgImg {
         height: 300px;
     }
-    .menu .content, .expert .content, .testimonials .content {
+
+    .menu .content,
+    .expert .content,
+    .testimonials .content {
         margin-top: 20px;
     }
-    .menu .content .box, .expert .content .box,.testimonials .content .box {
+
+    .menu .content .box,
+    .expert .content .box,
+    .testimonials .content .box {
         margin: 10px;
     }
-    .expert .content .box{
+
+    .expert .content .box {
         width: 340px;
     }
-    .testimonials .content .box{
+
+    .testimonials .content .box {
         padding: 20px;
     }
-    .contactForm{
+
+    .contactForm {
         margin-top: 20px;
     }
-    footer{
+
+    footer {
         flex-direction: column;
     }
-footer p{
-    text-align: center;
-}
-    footer .socialLinks
-    {
-        margin-top: 10px;;
+
+    footer p {
+        text-align: center;
+    }
+
+    footer .socialLinks {
+        margin-top: 10px;
+        ;
     }
 }
